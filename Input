@@ -1,0 +1,51 @@
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+
+class Comando extends KeyAdapter {
+    
+    static boolean para = false;
+    static int dx = 0;
+    static int dy = 0;
+    
+    public void keyPressed(KeyEvent event) {
+               
+        if (event.getKeyCode() == KeyEvent.VK_RIGHT) {
+
+            //System.out.println("seta para direita");
+            dx = 1;
+            dy = 0;
+        }
+    
+        
+        if (event.getKeyCode() == KeyEvent.VK_LEFT) {
+
+            //System.out.println("seta para esquerda");
+            dx = -1;
+            dy = 0;
+        }
+    
+        
+        if (event.getKeyCode() == KeyEvent.VK_UP) {
+
+           // System.out.println("seta para cima");
+            dy = -1;
+            dx = 0;
+        }
+
+        if (event.getKeyCode() == KeyEvent.VK_DOWN) {
+
+            //System.out.println("seta para baixo");
+            dy = 1;
+            dx = 0;
+        }
+
+        if (event.getKeyCode() == KeyEvent.VK_ESCAPE) {
+
+            //System.out.println("Parar");
+            para = true;
+        }
+
+    }
+
+}
