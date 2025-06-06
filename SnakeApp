@@ -1,0 +1,33 @@
+public class Snake {
+
+    final static int NUM_LINHAS = 40;
+    final static int NUM_COLUNAS = 100;
+    
+    public static void main(String[] argv) throws Exception {
+
+        Rotina.MontaJanelaAux(); // janela para ficar lendo o teclado via interrupção
+
+        Tela telaJogo = new Tela(NUM_LINHAS, NUM_COLUNAS, '-'); // cria a matriz de caracteres para ser nossa tela de jogo
+        
+        int posinicialX = 10; // posição inicial y,x da cobrinha
+        int posinicialY = 10; 
+        
+        Cobra cobrinha = new Cobra(posinicialX, posinicialY);
+        
+        while (!Comando.para) {
+            
+            cobrinha.movimentaCobra(Comando.dy, Comando.dx, telaJogo);
+
+            cobrinha.gravaCobra(telaJogo);
+            
+            telaJogo.apresentaToda(); // imprime todas a matriz na console
+            
+            Thread.sleep(50);
+            
+        }
+        
+        System.out.println("Fechou !!");
+        
+        System.exit(0);
+    }
+}
