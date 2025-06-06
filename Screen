@@ -1,0 +1,63 @@
+public class Tela {
+
+    // Atributos da Tela
+    int QT_LINHA;
+    public int QT_COLUNA;
+    public char[][] matriz;
+
+
+
+    public Tela (int linhas, int colunas, char simbolo) {
+
+        QT_LINHA = linhas;
+        QT_COLUNA = colunas;
+
+        matriz = new char[QT_LINHA][QT_COLUNA];
+
+
+        for (int y = 0; y < QT_LINHA; y++){ 
+                
+            for (int x = 0; x < QT_COLUNA; x++) {
+                matriz[y][x] = ' ';
+            }
+           
+        }
+        
+        for (int x=0; x < QT_COLUNA; x++) {  //
+
+            matriz[0][x] = simbolo;
+            matriz[QT_LINHA-1][x] = simbolo;
+
+        }
+
+        for (int y=0; y < QT_LINHA; y++) {
+
+            matriz[y][0] = simbolo;
+            matriz[y][QT_COLUNA-1] = simbolo;
+
+        }
+
+    }
+
+    public void apresentaToda (){
+
+        Rotina.LimpaTela();
+
+        for (int y = 0; y < QT_LINHA; y++){ 
+            
+            for (int x = 0; x < QT_COLUNA; x++) {
+                System.out.print(matriz[y][x]);
+            }
+
+            System.out.print("\n");
+        }
+
+    }
+
+    public void plotaCaracter (int posicaoY, int posicaoX, char caracter) {
+
+        matriz [posicaoY][posicaoX] = caracter;
+
+    }
+    
+}
