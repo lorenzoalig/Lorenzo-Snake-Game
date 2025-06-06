@@ -1,0 +1,67 @@
+public class Cobra {
+
+    int tamanhoCobra = 20;
+    int tamanhoMax = 40;
+    int[] cobraX;
+    int[] cobraY;
+
+    public Cobra(int posX, int posY){
+
+        cobraX = new int[tamanhoMax];
+        cobraY = new int[tamanhoMax];
+
+        for(int i = 0; i < tamanhoCobra; i++){
+            cobraX[i] = posX + i;
+            cobraY[i] = posY;
+        }
+
+
+        // for(int i = tamanhoMax - 1; i >= 0; i--){
+        //     System.out.println(i + " " + cobraX[i]);
+        // }
+    }
+    
+    public void movimentaCobra(int incY, int incX, Tela telaLorenzo){
+        
+        if(incX != 0 || incY != 0){
+
+            telaLorenzo.plotaCaracter(cobraY[0], cobraX[0], ' ');
+            
+            for(int i = 0; i < tamanhoCobra - 1; i++){
+                cobraX[i] = cobraX[i + 1];
+                cobraY[i] = cobraY[i + 1];
+            }
+            
+            int aux = tamanhoCobra - 1;
+
+            cobraX[aux] = cobraX[aux] + incX;
+            cobraY[aux] = cobraY[aux] + incY;
+            
+            int cabecaX = cobraX[aux];
+            int cabecaY = cobraY[aux];
+            
+            if(cabecaX == Snake.NUM_COLUNAS - 1){
+                cobraX[aux] = 1;
+            } else
+                if(cabecaX == 1){
+                    cobraX[aux] = Snake.NUM_COLUNAS - 2;
+                } else
+                    if(cabecaY == Snake.NUM_LINHAS - 1){
+                        cobraY[aux] = 1;
+                    } else
+                        if(cabecaY == 1){
+                            cobraY[aux] = Snake.NUM_LINHAS - 2;
+                        }
+        }
+    }
+
+    public void gravaCobra(Tela telaLore){
+
+        char simbolo = 'X';
+
+        for(int i = 0; i < tamanhoCobra; i++){
+            telaLore.plotaCaracter(cobraY[i], cobraX[i] , simbolo);
+        }
+
+    }
+}
