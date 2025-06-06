@@ -1,0 +1,25 @@
+import java.io.IOException;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class Rotina {
+
+    public static void LimpaTela () {
+        
+        System.out.print("\f");
+
+    }    
+
+    public static void MontaJanelaAux () {
+
+       JTextField textField = new JTextField();
+       textField.addKeyListener(new Comando());
+
+       JFrame jframe = new JFrame();
+       jframe.add(textField);
+       jframe.setSize(1, 1);
+       jframe.setVisible(true);
+
+    }
+
+}
