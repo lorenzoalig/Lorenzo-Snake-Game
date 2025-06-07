@@ -1,3 +1,5 @@
+//This class serves as an auxiliary input method utilizing Java's GUI capabilities. It is used as an alternative to the Scanner class.
+
 import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
