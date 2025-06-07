@@ -1,4 +1,4 @@
-public class Tela {
+public class Screen {
 
     // Atributos da Tela
     int QT_LINHA;
@@ -7,7 +7,7 @@ public class Tela {
 
 
 
-    public Tela (int linhas, int colunas, char simbolo) {
+    public Screen (int linhas, int colunas, char simbolo) {
 
         QT_LINHA = linhas;
         QT_COLUNA = colunas;
@@ -41,7 +41,7 @@ public class Tela {
 
     public void apresentaToda (){
 
-        Rotina.LimpaTela();
+        System.out.print("\f");
 
         for (int y = 0; y < QT_LINHA; y++){ 
             
@@ -49,7 +49,7 @@ public class Tela {
                 System.out.print(matriz[y][x]);
             }
 
-            System.out.print("\n");
+            System.out.println();
         }
 
     }
