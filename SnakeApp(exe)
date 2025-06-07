@@ -1,0 +1,33 @@
+public class SnakeApp {
+
+    final static int NUM_LINHAS = 30;
+    final static int NUM_COLUNAS = 100;
+    
+    public static void main(String[] argv) throws Exception {
+
+        JavaInput.MontaJanelaAux(); // janela para ficar lendo o teclado via interrupção
+
+        Screen telaJogo = new Screen(NUM_LINHAS, NUM_COLUNAS, '-'); // cria a matriz de caracteres para ser nossa tela de jogo
+        
+        int posinicialX = 10; // posição inicial y,x da cobrinha
+        int posinicialY = 10; 
+        
+        Snake cobrinha = new Snake(posinicialX, posinicialY);
+        
+        while (!Input.para) {
+            
+            cobrinha.movimentaCobra(Input.dy, Input.dx, telaJogo);
+
+            cobrinha.gravaCobra(telaJogo);
+            
+            telaJogo.apresentaToda(); // imprime todas a matriz no terminal
+            
+            Thread.sleep(50);
+            
+        }
+        
+        System.out.println("Fechou !!");
+        
+        System.exit(0);
+    }
+}
