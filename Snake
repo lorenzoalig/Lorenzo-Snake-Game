@@ -1,11 +1,11 @@
-public class Cobra {
+public class Snake {
 
     int tamanhoCobra = 20;
     int tamanhoMax = 40;
     int[] cobraX;
     int[] cobraY;
 
-    public Cobra(int posX, int posY){
+    public Snake(int posX, int posY){
 
         cobraX = new int[tamanhoMax];
         cobraY = new int[tamanhoMax];
@@ -21,7 +21,7 @@ public class Cobra {
         // }
     }
     
-    public void movimentaCobra(int incY, int incX, Tela telaLorenzo){
+    public void movimentaCobra(int incY, int incX, Screen telaLorenzo){
         
         if(incX != 0 || incY != 0){
 
@@ -40,22 +40,22 @@ public class Cobra {
             int cabecaX = cobraX[aux];
             int cabecaY = cobraY[aux];
             
-            if(cabecaX == Snake.NUM_COLUNAS - 1){
+            if(cabecaX == SnakeApp.NUM_COLUNAS - 1){
                 cobraX[aux] = 1;
             } else
                 if(cabecaX == 1){
-                    cobraX[aux] = Snake.NUM_COLUNAS - 2;
+                    cobraX[aux] = SnakeApp.NUM_COLUNAS - 2;
                 } else
-                    if(cabecaY == Snake.NUM_LINHAS - 1){
+                    if(cabecaY == SnakeApp.NUM_LINHAS - 1){
                         cobraY[aux] = 1;
                     } else
-                        if(cabecaY == 1){
-                            cobraY[aux] = Snake.NUM_LINHAS - 2;
+                        if(cabecaY == 0){
+                            cobraY[aux] = SnakeApp.NUM_LINHAS - 2;
                         }
         }
     }
 
-    public void gravaCobra(Tela telaLore){
+    public void gravaCobra(Screen telaLore){
 
         char simbolo = 'X';
 
