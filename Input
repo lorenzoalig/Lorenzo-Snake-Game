@@ -2,7 +2,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
-class Comando extends KeyAdapter {
+class Input extends KeyAdapter {
     
     static boolean para = false;
     static int dx = 0;
@@ -46,6 +46,8 @@ class Comando extends KeyAdapter {
             para = true;
         }
 
-    }
+    
+      //  System.out.print(event.getKeyChar());
 
+    }
 }
