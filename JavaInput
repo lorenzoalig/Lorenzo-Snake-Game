@@ -2,18 +2,11 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class Rotina {
-
-    public static void LimpaTela () {
-        
-        System.out.print("\f");
-
-    }    
-
+public class JavaInput {
     public static void MontaJanelaAux () {
 
        JTextField textField = new JTextField();
-       textField.addKeyListener(new Comando());
+       textField.addKeyListener(new Input());
 
        JFrame jframe = new JFrame();
        jframe.add(textField);
@@ -21,5 +14,4 @@ public class Rotina {
        jframe.setVisible(true);
 
     }
-
 }
